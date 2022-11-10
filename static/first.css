@@ -1,0 +1,79 @@
+/* body {
+    background: url("img/weather.jpg") no-repeat center  fixed;
+    font-family: sans-serif;
+    background-size: cover;
+} */
+
+body{
+    background: url("img/second.jpg") no-repeat center  fixed;
+    font-family: sans-serif;
+    background-size: cover;
+}
+
+
+.box {
+    padding: 40px;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #191919;
+    border-radius: 25px;
+    text-align: center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+
+
+
+
+#date,
+#Sname {
+    border: 2px solid #0097e6;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 15px 45px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+
+}
+
+#date:focus,#Sname:focus {
+    width: 230px;
+    border-color: #6fb98f;
+}
+
+#submit {
+    border: 2px solid #2ecc71;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 15px 40px;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+#submit:hover {
+    background-color: #2ecc71;
+    ;
+}

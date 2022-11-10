@@ -1,0 +1,139 @@
+body{
+    background: url("img/second.jpg") no-repeat center  fixed;
+    font-family: sans-serif;
+    background-size: cover;
+}
+
+.imgcont{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    
+}
+.imgcont img{ 
+margin:50px;
+width:450px;
+height:auto;
+box-shadow: 3px 3px 3px #555;
+border: 2px solid #555 ;
+border-radius: 25px;
+
+}
+
+#welcome {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 250;
+    letter-spacing: 5px;
+}
+
+#date,
+#Sname {
+    border: 2px solid #0097e6;
+    background: none;
+
+    height: 40px;
+    display: block;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+
+}
+
+#form {
+    margin-top: 5px;
+}
+
+#submit{
+    width: 75px;
+    border: 2px solid #2ecc71;
+    border-radius: 25px;
+    display: block;
+    height: 40px;
+    text-align: center;
+    outline: none;
+    background: none;
+    color: white;
+}
+h4{
+    margin: 20px;
+}
+#download{
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #2ecc71;
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+}
+
+#download:hover{
+    background-color: #2ecc71;
+}
+
+
+
+
+#submit:hover {
+    background-color: #2ecc71;
+}
+
+
+
+#tb {
+    border: 2px solid black;
+    max-height: 500px;
+    position: absolute;
+    transform: translate(50%, 10%);
+    right: 50%;
+    width: 85vw;
+    border-radius: 10px;
+    min-height: fit-content;
+    background-color: #efefef;
+}
+
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background:none;
+}
+::-webkit-scrollbar-thumb{  
+      border-radius: 35px;
+
+    background-color: #888;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 890px) {
+    #submit {
+        width: fit-content;
+    }
+
+    #date,
+    #Sname {
+        width: 150px;
+
+    }
+
+
+}
