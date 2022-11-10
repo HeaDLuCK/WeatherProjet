@@ -1,0 +1,46 @@
+{% extends 'Base.html'%}
+
+{% block rows %}
+
+<h4 style="text-align: center;">Station : {{random[0]['nom']}}  Date : {{random[0]['date'][0:10]}} </h4>
+<p  style="text-align:center ;">
+
+        <a id="download" href="{{url_for('download')}}" >Download</a>
+
+</p>
+
+<div id="tb" class="table-responsive ">
+    
+    <table id="last" class="table table-hover text-center">
+        <thead class="bg-dark text-light" style="position: sticky;top: 0; ">
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Temperature C</th>
+                <th scope="col">Humidite (%)</th>
+                <th scope="col">pression au niveau mer</th>
+                <th scope="col">Vitesse du vent moyen 10 mn</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for i in random %}
+            <tr>
+                <th id="Tdate" scope="row">{{i['date'][0:10]}} </th>
+                <th >{{i['date'][11:16]}} </th>
+                <td id="Tnom">{{i['nom']}} </td>
+                <td>{{ i['tc'] |float| round(2)}} C</td>
+                <td>{{i['u']}}% </td>
+                <td>{{i['pmer']}} Pa </td>
+                <td>{{i['ff']}} m/s </td>
+            </tr>
+            {% endfor %}
+            </tr>
+
+        </tbody>
+    </table>
+    
+</div>
+
+{% endblock %}

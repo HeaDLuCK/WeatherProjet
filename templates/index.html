@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/first.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="box" action="{{ url_for('specData')}}" method="post" onsubmit="return Verification()">
+        <h1>Welcome To nothing</h1>
+        <div class="form">
+            <input placeholder="Station Name" type="text" name="Sname" id="Sname">
+
+
+            <input placeholder="Date of data" type="text" name="date" onfocus="(this.type = 'date')" id="date" min="2022-01-01" max="" >
+            
+        </div>
+        <input type="submit" id="submit" value="Search">
+    </form>
+    <script src="../static/first.js"></script>
+</body>
+
+</html>
