@@ -140,7 +140,7 @@ class MeteoApi:
             date=self.dateAndFormatValid(date)
             nom=nom.upper()
 
-            if date.year==currdate.year:
+            if date.year <= 2022 and date.year>=currdate.year:
                 date=str(date)
                 x = self.col.find({"nom": nom, "date": {'$regex': date}}).sort("date",1)
                 test = self.col.count_documents({"nom": nom, "date": {'$regex': date}})
