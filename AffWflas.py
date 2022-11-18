@@ -6,10 +6,10 @@ import re
 from apscheduler.schedulers.background import BackgroundScheduler
 
 
-
 m=MeteoApi()
 m.check_and_update()
 
+#! auto-Update 
 sched = BackgroundScheduler(daemon=True)
 sched.add_job(m.check_and_update,'interval',hours=24)
 sched.start()
@@ -18,34 +18,15 @@ sched.start()
 appweb= Flask(__name__)
 appweb.secret_key = "super secret key"
 
+
+#? Index Page 
+
 @appweb.route("/")
 def homepage():
     return render_template('index.html')
 
 
-    
-
-@appweb.route("/graphs" ,methods=['GET'])
-def graphs():
-    myname=session.get('nom')
-    mydate=session.get('date')
-    testname=myname.upper()
-    m.graphs(myname,mydate)
-    path='static/data/graphs/'
-    filename=myname+' '+mydate
-    test=os.listdir(path)
-    bigList=[]
-    for i in test:
-        x=re.search(filename,i)
-        if x:
-            bigList.append(path+i)
-    return render_template('graphs.html',imgList=bigList,nom=testname,date=mydate)
-
-
-
-
-
-
+#? Table Page 
 
 
 @appweb.route("/table",methods=['GET','POST'])
@@ -68,6 +49,26 @@ def specData():
         return render_template('table.html',random=rand)
 
 
+#? Graphs Page 
+@appweb.route("/graphs" ,methods=['GET'])
+def graphs():
+    myname=session.get('nom')
+    mydate=session.get('date')
+    testname=myname.upper()
+    m.graphs(myname,mydate)
+    path='static/data/graphs/'
+    filename=myname+' '+mydate
+    test=os.listdir(path)
+    bigList=[]
+    for i in test:
+        x=re.search(filename,i)
+        if x:
+            bigList.append(path+i)
+    return render_template('graphs.html',imgList=bigList,nom=testname,date=mydate)
+
+
+
+#? download  method 
 
 @appweb.route("/download" ,methods=['GET'])
 def download():
